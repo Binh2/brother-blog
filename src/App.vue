@@ -1,8 +1,8 @@
 <template>
-  <NavItemsView v-bind:style="NavItemsViewStyle" />
+  <NavItemsView />
 
   <main>
-    <LeftView v-bind:style="LeftViewStyle" />
+    <LeftView />
 
     <!-- HomeView/WriteupsView-->
     <router-view />
@@ -38,20 +38,6 @@ export default {
     NavItemsView,
     LeftView,
     RightView,
-  },
-  computed: {
-    NavItemsViewStyle() {
-      return {
-        "--component-width": "100px",
-      };
-    },
-    LeftViewStyle() {
-      return {
-        "--component-height": "calc(100vh - 20px - 20vh)",
-        "--image-width": 374,
-        "--image-height": 667,
-      };
-    },
   },
 };
 </script>

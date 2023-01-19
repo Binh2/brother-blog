@@ -9,7 +9,7 @@ body {
   background-color: rgba(2, 1, 1, 0.781);
   color: #ffffff;
   font-family: victormono;
-  margin: 5px;
+  margin: var(--margin);
 }
 * {
   box-sizing: border-box;

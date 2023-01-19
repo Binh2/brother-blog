@@ -2,21 +2,24 @@
   <div class="nav-container">
     <nav class="nav">
       <img class="--no-hover nav__icon" src="../assets/images/yasuo_hold.png" />
+      <img class="nav__tornado" src="../assets/images/tornado.jpg" />
       <span class="nav-items">
         <NavItem to="/">Home</NavItem>
         <NavItem to="/writeups">Writeups</NavItem>
       </span>
     </nav>
-    <!-- <div class="nav-container__fill-in-space"></div> -->
   </div>
 </template>
 
 <style scoped>
+.nav__tornado {
+  /* display: none; */
+}
 .nav-container {
   position: sticky;
-  top: calc(-20vh - 2 * 10px);
+  top: calc(-20vh - 2 * var(--margin) - 2 * var(--border-margin));
   backdrop-filter: blur(10px);
-  margin: 10px 0;
+  margin: var(--margin) 0;
 
   height: 20vh;
   width: 100%;
@@ -37,6 +40,19 @@
   align-items: center;
 }
 
+.nav__icon {
+  display: inline-block;
+  vertical-align: bottom;
+  background-size: cover;
+
+  background-repeat: no-repeat;
+
+  /* width: 12vw; */
+  height: 80%;
+  width: auto;
+  flex-grow: 2;
+}
+
 .nav-items {
   display: inline-block;
   flex-basis: 100%;
@@ -45,19 +61,6 @@
   display: flex;
   justify-content: flex-start;
   flex-flow: row wrap;
-}
-
-.nav__icon {
-  display: inline-block;
-  vertical-align: bottom;
-  background-size: 100% 100%;
-
-  background-repeat: no-repeat;
-
-  /* width: 12vw; */
-  height: 80%;
-  width: auto;
-  flex-grow: 2;
 }
 
 .nav__icon:hover {

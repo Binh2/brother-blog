@@ -3,10 +3,8 @@
     <nav class="nav">
       <img class="--no-hover nav__icon" src="../assets/images/yasuo_hold.png" />
       <img class="nav__tornado" src="../assets/images/tornado.jpg" />
-      <span class="nav-items">
-        <NavItem to="/">Home</NavItem>
-        <NavItem to="/writeups">Writeups</NavItem>
-      </span>
+      <NavItem to="/">Home</NavItem>
+      <NavItem to="/writeups">Writeups</NavItem>
     </nav>
   </div>
 </template>
@@ -16,8 +14,8 @@
   /* display: none; */
 }
 .nav-container {
-  position: sticky;
-  top: calc(-20vh - 2 * var(--margin) - 2 * var(--border-margin));
+  /* position: sticky; */
+  /* top: calc(-20vh - 2 * var(--margin) - 2 * var(--border-margin)); */
   backdrop-filter: blur(10px);
   margin: var(--margin) 0;
 
@@ -29,40 +27,35 @@
 .nav {
   box-sizing: border-box;
   border: 2px solid rgba(0, 2, 102, 0.671);
-  padding-top: 10px;
   font-size: large;
   width: 100%;
   height: 100%;
   background-image: url(../assets/images/aram.JPG);
-
   background-size: contain;
-  display: flex;
+
+  /* display: flex;
+  align-items: center; */
+
+  display: grid;
+  grid-auto-columns: repeat(min-content, 4);
+  grid-auto-rows: 50% 50%;
+  grid-auto-flow: column;
   align-items: center;
+}
+.nav > * {
+  grid-row-start: 1;
+  grid-row-end: 3;
+  /* justify-self: center; */
 }
 
 .nav__icon {
   display: inline-block;
   vertical-align: bottom;
-  background-size: cover;
 
-  background-repeat: no-repeat;
-
-  /* width: 12vw; */
   height: 80%;
   width: auto;
-  flex-grow: 2;
+  object-fit: cover;
 }
-
-.nav-items {
-  display: inline-block;
-  flex-basis: 100%;
-  flex-shrink: 4;
-
-  display: flex;
-  justify-content: flex-start;
-  flex-flow: row wrap;
-}
-
 .nav__icon:hover {
   content: url(../assets/images/yasuo_draw.png);
 }

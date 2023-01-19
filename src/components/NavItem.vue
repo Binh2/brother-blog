@@ -15,7 +15,7 @@
   white-space: nowrap;
   backdrop-filter: blur(3px);
 
-  font-size: 175%;
+  font-size: 1em;
   color: #ffff00;
 }
 #nav-item__link {

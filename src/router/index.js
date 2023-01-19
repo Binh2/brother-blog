@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from "vue-router";
-// import HomeView from "../views/HomeView.vue";
 import HomeView from "../views/HomeView.vue";
 
 const routes = [
@@ -18,6 +17,17 @@ const routes = [
       import(/* webpackChunkName: "writeup" */ "../views/WriteupsView.vue"),
   },
 ];
+require
+  .context("../pages/", false, /.*\.vue/)
+  .keys()
+  .forEach((item) => {
+    let str = item.split("./")[1];
+    routes.push({
+      path: "/" + str.split(".vue")[0],
+      component: () => import("../pages/" + str),
+    });
+  });
+// console.log(require.context("../pages/", false, /.*\.vue/).keys());
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),

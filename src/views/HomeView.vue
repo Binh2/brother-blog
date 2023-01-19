@@ -16,7 +16,9 @@
       scelerisque, eget mollis velit vestibulum. Mauris congue magna metus,
       egestas dapibus massa tincidunt id.
     </p>
-    <p>
+    <NavItem to="/gay">Gay</NavItem>
+    <NavItem to="/VeryGayPage">Very Gay Page</NavItem>
+    <!-- <p>
       Quisque rutrum sapien odio, ac sollicitudin metus ultricies at. Aliquam
       erat volutpat. Donec sed iaculis sapien. Ut tincidunt sollicitudin magna,
       et pulvinar odio iaculis nec. Morbi nec lacus bibendum purus tempor
@@ -63,16 +65,13 @@
       interdum ex massa at lacus. Phasellus ultrices at ligula in ultrices.
       Fusce blandit sit amet sem vel sodales. Vivamus sit amet lacinia orci. In
       pellentesque est et sollicitudin dictum.
-    </p>
+    </p> -->
   </div>
 </template>
 
 <style>
 .statmid {
-  display: inline-block;
-  padding: 5px;
-  margin: var(--margin);
-  border: var(--border-width) solid purple;
+  /* display: inline-block; */
 
   line-height: 1.7em;
   text-align: justify;

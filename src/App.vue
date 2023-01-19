@@ -5,7 +5,7 @@
     <LeftView />
 
     <!-- HomeView/WriteupsView-->
-    <router-view />
+    <router-view class="main__router-view" />
     <RightView />
   </main>
 </template>
@@ -25,6 +25,12 @@ main {
 
   border: 2px solid var(--color-blue);
   background: var(--color-dark-blue);
+}
+.main__router-view {
+  flex-grow: 1000;
+  padding: 5px;
+  margin: var(--margin) 0;
+  border: var(--border-width) solid purple;
 }
 </style>
 

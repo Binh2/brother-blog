@@ -3,19 +3,16 @@
     <nav class="nav">
       <img class="--no-hover nav__icon" src="../assets/images/yasuo_hold.png" />
       <img class="nav__tornado" src="../assets/images/tornado.jpg" />
-      <NavItem to="/">Home</NavItem>
-      <NavItem to="/writeups">Writeups</NavItem>
+      <NavItem class="nav__nav-item nav__nav-item1" to="/">Home</NavItem>
+      <NavItem class="nav__nav-item nav__nav-item2" to="/writeups"
+        >Writeups</NavItem
+      >
     </nav>
   </div>
 </template>
 
 <style scoped>
-.nav__tornado {
-  /* display: none; */
-}
 .nav-container {
-  /* position: sticky; */
-  /* top: calc(-20vh - 2 * var(--margin) - 2 * var(--border-margin)); */
   backdrop-filter: blur(10px);
   margin: var(--margin) 0;
 
@@ -23,31 +20,79 @@
   width: 100%;
 
   opacity: 12vw;
+
+  --tornado-width: 53px;
 }
 .nav {
   box-sizing: border-box;
   border: 2px solid rgba(0, 2, 102, 0.671);
-  font-size: large;
+  font-size: 2rem;
   width: 100%;
   height: 100%;
   background-image: url(../assets/images/aram.JPG);
   background-size: contain;
 
-  /* display: flex;
-  align-items: center; */
-
   display: grid;
-  grid-auto-columns: repeat(min-content, 4);
-  grid-auto-rows: 50% 50%;
+  grid-auto-columns: min-content;
+  grid-auto-rows: 100%;
   grid-auto-flow: column;
   align-items: center;
+  overflow: hidden;
 }
-.nav > * {
-  grid-row-start: 1;
-  grid-row-end: 3;
-  /* justify-self: center; */
+@keyframes nav__tornado--move {
+  0% {
+    left: 0px;
+  }
+  100% {
+    left: calc(
+      100vw - 2 * var(--margin) - 2 * var(--border-width) - var(--scroll-bar-width)
+    );
+  }
+}
+@keyframes nav__nav-item--move {
+  0% {
+    top: 0px;
+  }
+  100% {
+    top: calc(-10vh + 0.5em + var(--margin) + var(--border-width));
+  }
+}
+.nav__tornado {
+  position: relative;
+  justify-self: center;
+  display: none;
+}
+.nav__nav-item {
+  font-size: 1em;
+  position: relative;
+}
+.nav__icon ~ * {
+  --time: 3s;
+}
+.nav__icon:hover ~ .nav__tornado {
+  /* forward is for element to stay in its position after animating */
+  animation: nav__tornado--move var(--time) ease-out forwards;
+  display: block;
+  transition: display var(--time) linear 0.1s;
+}
+.nav__icon:hover ~ .nav__nav-item {
+  animation: nav__nav-item--move calc(var(--time) / 2)
+    cubic-bezier(0.08, 0.72, 0.53, 0.85) alternate 2;
+}
+.nav__icon:hover ~ .nav__nav-item1 {
+  animation-delay: calc(var(--time) / 20);
+}
+.nav__icon:hover~.nav__nav-item2 {
+  animation-delay: calc(var(--time) / 7);
 }
 
+.nav > * {
+  grid-row: 1 / 2;
+}
+.nav__tornado,
+.nav__icon {
+  grid-column-start: 1;
+}
 .nav__icon {
   display: inline-block;
   vertical-align: bottom;
@@ -55,21 +100,9 @@
   height: 80%;
   width: auto;
   object-fit: cover;
+  z-index: 1;
 }
 .nav__icon:hover {
   content: url(../assets/images/yasuo_draw.png);
 }
-
-.site-container {
-  margin-top: calc(42px + 7.5em);
-}
 </style>
-
-<script>
-import NavItem from "../components/NavItem.vue";
-export default {
-  components: {
-    NavItem,
-  },
-};
-</script>

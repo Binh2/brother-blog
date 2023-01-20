@@ -1,7 +1,5 @@
 <template>
-  <highlightjs autodetect v-bind:code="codeComputed" class="high-light">
-    <slot style="display: none" />
-  </highlightjs>
+  <highlightjs autodetect v-bind:code="codeComputed" class="high-light" />
 </template>
 
 <style scoped>
@@ -30,11 +28,8 @@ export default {
   components: {
     highlightjs: hljsVuePlugin.component,
   },
-  setup(props, context) {
-    const slotCode = context.slots.default()[0].children;
-    const codeComputed = computed(() =>
-      (props.code == "" ? slotCode : props.code).replaceAll("    ", "  ")
-    );
+  setup(props) {
+    const codeComputed = computed(() => props.code.replaceAll("    ", "  "));
 
     return {
       codeComputed,

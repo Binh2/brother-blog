@@ -29,7 +29,7 @@
 }
 .nav {
   box-sizing: border-box;
-  border: 2px solid rgba(0, 2, 102, 0.671);
+  border: 2px solid orangered;
   font-size: 2rem;
   width: 100%;
 

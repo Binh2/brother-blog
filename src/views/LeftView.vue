@@ -16,6 +16,12 @@ img {
 
   transition: margin-top 2s;
 }
+
+@media (max-aspect-ratio: 105/65) {
+  img {
+    display: none;
+  }
+}
 </style>
 
 <script>

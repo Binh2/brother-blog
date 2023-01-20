@@ -1,8 +1,9 @@
 <template>
   <img
     v-bind:style="{ 'margin-top': marginTop + 'px' }"
-    src="../assets/images/elderdragon.png"
+    src="../assets/images/elderdragon.gif"
     alt="Elder dragon in League of Legends"
+    id="left-image"
   />
 </template>
 

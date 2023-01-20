@@ -60,3 +60,22 @@ a:visited {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
   background-color: rgba(1, 253, 198, 0.9);
 }
+
+/*
+ * Generic styling for site bars
+ */
+
+.site-bar {
+  width: 25%;
+  overflow-x: visible;
+  min-width: 0px;
+  outline: 2px solid rgb(255, 170, 0);
+}
+
+@media only screen and (max-width: 1200px) {
+  .site-bar {
+    width: 0 !important;
+    outline: none;
+    visibility: hidden;
+  }
+}

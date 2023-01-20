@@ -3,8 +3,6 @@
 
   <main>
     <LeftView />
-
-    <!-- HomeView/WriteupsView-->
     <router-view class="main__router-view" />
     <RightView />
   </main>
@@ -21,13 +19,13 @@
 */
 main {
   display: flex;
-  flex-direction: row;
 
   border: 2px solid var(--color-blue);
   background: var(--color-dark-blue);
 }
 .main__router-view {
   flex-grow: 1000;
+  width: 0;
   padding: 5px;
   margin: var(--margin) 0;
   border: var(--border-width) solid purple;

@@ -1,5 +1,5 @@
 <template>
-  <div class="statmid">
+  <div class="container">
     <h1>Lorem Ipsum</h1>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam bibendum
@@ -16,8 +16,36 @@
       scelerisque, eget mollis velit vestibulum. Mauris congue magna metus,
       egestas dapibus massa tincidunt id.
     </p>
-    <NavItem to="/gay">Gay</NavItem>
+    <NavItem to="/GayPage">Gay</NavItem>
     <NavItem to="/VeryGayPage">Very Gay Page</NavItem>
+    <HighLight autodetect v-bind:code="code">
+      <!-- <pre>
+def androaxml_main(inp, outp=None, resource=None):
+    ret_type = androconf.is_android(inp)
+    if ret_type == "APK":
+        a = apk.APK(inp)
+        if resource:
+            if resource not in a.files:
+                print("The APK does not contain a file called '{}'".format(resource), file=sys.stderr)
+                sys.exit(1)
+
+            axml = AXMLPrinter(a.get_file(resource)).get_xml_obj()
+        else:
+            axml = a.get_android_manifest_xml()
+    elif ".xml" in inp:
+        axml = AXMLPrinter(read(inp)).get_xml_obj()
+    else:
+        print("Unknown file type")
+        sys.exit(1)
+
+    buff = etree.tostring(axml, pretty_print=True, encoding="utf-8")
+    if outp:
+        with open(outp, "wb") as fd:
+            fd.write(buff)
+    else:
+        sys.stdout.write(highlight(buff.decode("UTF-8"), get_lexer_by_name("xml"), TerminalFormatter())) </pre
+      > -->
+    </HighLight>
     <!-- <p>
       Quisque rutrum sapien odio, ac sollicitudin metus ultricies at. Aliquam
       erat volutpat. Donec sed iaculis sapien. Ut tincidunt sollicitudin magna,
@@ -70,39 +98,48 @@
 </template>
 
 <style>
-.statmid {
+.container {
   /* display: inline-block; */
 
   line-height: 1.7em;
   text-align: justify;
   text-justify: inter-word;
   width: 60em;
-  flex-grow: 2;
-}
-
-/*
- * Generic styling for site bars
- */
-
-.site-bar {
-  width: 25%;
-  overflow-x: visible;
-  min-width: 0px;
-  outline: 2px solid rgb(255, 170, 0);
-}
-
-@media only screen and (max-width: 1200px) {
-  .site-bar {
-    width: 0 !important;
-    outline: none;
-    visibility: hidden;
-  }
-}
-
-#site-feather {
-  position: absolute;
-  z-index: -100;
-  width: 100px;
-  transform: translateX(calc(12vw - 50px)) translateY(30px);
+  /* flex-grow: 2; */
+  /* flex-basis: min-content; */
 }
 </style>
+
+<script>
+export default {
+  setup() {
+    const code = String.raw`def androaxml_main(inp, outp=None, resource=None):
+    ret_type = androconf.is_android(inp)
+    if ret_type == "APK":
+        a = apk.APK(inp)
+        if resource:
+            if resource not in a.files:
+                print("The APK does not contain a file called '{}'".format(resource), file=sys.stderr)
+                sys.exit(1)
+
+            axml = AXMLPrinter(a.get_file(resource)).get_xml_obj()
+        else:
+            axml = a.get_android_manifest_xml()
+    elif ".xml" in inp:
+        axml = AXMLPrinter(read(inp)).get_xml_obj()
+    else:
+        print("Unknown file type")
+        sys.exit(1)
+
+    buff = etree.tostring(axml, pretty_print=True, encoding="utf-8")
+    if outp:
+        with open(outp, "wb") as fd:
+            fd.write(buff)
+    else:
+        print("asdaasdsadasdsadas dasdasdasd asdasdsadasdsads adsadsadsadsads adasds adsadasdasd asdasdasdsadasdasdasdasdasdasdasdasdasdsadsadsdasddasd")`;
+    return {
+      code,
+    };
+  },
+};
+</script>

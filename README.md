@@ -1,4 +1,9 @@
-# blog
+# Blog
+
+## Visit the [website](https://binh2.github.io/brother-blog/)
+
+If the link doesn't work, use this url
+https://binh2.github.io/brother-blog/
 
 ## Project setup
 ```

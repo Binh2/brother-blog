@@ -56,15 +56,6 @@ https://user-images.githubusercontent.com/53990204/214478587-209b3ab0-7458-4725-
 </form>
 ```
 
-#### CSS
-
-```css
-/* To change checkbox color */
-.input-type-checkbox {
-  accent-color: red;
-}
-```
-
 #### Javascript
 
 ```js

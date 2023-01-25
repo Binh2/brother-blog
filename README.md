@@ -56,6 +56,31 @@ https://user-images.githubusercontent.com/53990204/214478587-209b3ab0-7458-4725-
 </form>
 ```
 
+#### CSS
+
+```css
+/* Animation */
+@keyframes nav__nav-item--spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.nav__nav-item:hover {
+  animation: nav__nav-item--spin 2s linear 2;
+}
+```
+
+```css
+/* Transition */
+.nav-tornado {
+  transition: display 2s linear 0.1s; /* Doesn't work very well with non-value properties */
+  transition: margin-left 2s linear 0.1s; /* Work better with value properties */
+```
+
 #### Javascript
 
 ```js
